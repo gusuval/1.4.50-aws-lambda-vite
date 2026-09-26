@@ -67,6 +67,7 @@ Modelo: `{ id (UUID), title, completed, createdAt, updatedAt }`.
 2. **API Gateway v2 en vez de Function URL**: la Function URL pública devolvía `403 Forbidden` por el nuevo "Block Public Access" de AWS para Lambda (2024). Migrar a API Gateway v2 resolvió el problema — lección real de que los servicios cloud evolucionan bajo tus pies.
 3. **IAM de mínimo privilegio**: el rol de la Lambda solo tiene los permisos DynamoDB que usa (`PutItem`, `GetItem`, `UpdateItem`, `DeleteItem`, `Scan`) sobre esa tabla concreta.
 4. **El frontend recibe la URL de la API** vía `terraform output` → variable de entorno de Vite; el código no tiene URLs hardcodeadas.
+5. **Root Directory en Vercel para monorepos**: al conectar el repo (que incluye `terraform/`, `lambda/` y `frontend/`) a Vercel para auto-deploy, hay que fijar el *Root Directory* del proyecto a `frontend` explícitamente. Sin eso, cada push clona todo el repo y ejecuta `vite build` en la raíz, donde no existe `package.json` ni `node_modules` (`vite: command not found`). Un despliegue manual con `vercel --prod` lanzado desde dentro de `frontend/` no sufre este problema porque ya sube solo esa carpeta — el fallo solo aparece en los deploys automáticos disparados por git.
 
 ## 🚀 Cómo ejecutar
 
