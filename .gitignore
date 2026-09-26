@@ -13,3 +13,6 @@ frontend/node_modules/
 frontend/dist/
 frontend/.env
 frontend/.env.local
+
+# Exports de conversación (solo se suben a GitHub explícitamente)
+doc/
