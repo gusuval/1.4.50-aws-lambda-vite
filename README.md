@@ -1,5 +1,19 @@
 # ⚡ Todo List Serverless — AWS Lambda + DynamoDB + Vite
 
+## 🔗 Enlaces
+
+- **App en producción:** https://frontend-zeta-seven-28.vercel.app
+- **API pública:** https://egrruvkr3c.execute-api.us-east-2.amazonaws.com
+- **Repositorio (GitHub):** https://github.com/gusuval/1.4.50-aws-lambda-vite
+- **Costes de generación y despliegue:** [doc/COSTOS.md](doc/COSTOS.md)
+- **Presentación del proyecto:** [doc/presentacion.pptx](doc/presentacion.pptx)
+
+## 🎬 Demo
+
+Crear, completar, editar y borrar tareas contra la API real (Vercel → API Gateway v2 → Lambda → DynamoDB):
+
+![Demo: crear, completar, editar y borrar tareas](doc/demo-todo-serverless.gif)
+
 ## 🎯 Objetivo del proyecto
 
 Construir una aplicación de tareas **100% serverless**: el backend es una función Lambda en Python con DynamoDB, la infraestructura se define con Terraform y el frontend Vite/React se despliega en Vercel.
